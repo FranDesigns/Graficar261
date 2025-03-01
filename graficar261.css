@@ -92,7 +92,7 @@ body,
   }
 
   .navbar-links ul {
-    position: absolute;
+    position: fixed;
     flex-direction: column;
     margin-left: 47vw;
     margin-top: 11vh;
@@ -107,8 +107,9 @@ body,
   }
 
   .navbar .logo {
-    position: absolute;
-    margin-left: 17vw;
+    /*position: absolute;
+    margin-left: 17vw;*/
+    display: none;
   }
 
   .tarjetas-presentacion,
