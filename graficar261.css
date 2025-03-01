@@ -1,0 +1,709 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Bebas Neue", serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.2vw;
+  background-color: black;
+  overflow-x: hidden;
+}
+
+body,
+.navbar,
+.dropdown,
+.button,
+.dropbtn {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.navbar {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  background-color: rgb(0, 0, 0, 0.9);
+  height: 11vh;
+  width: 100vw;
+  margin: 15px 0 0 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  z-index: 1;
+}
+
+#boton-menu {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#boton-menu svg {
+  height: 5vh;
+  width: 5vw;
+  color: white;
+  position: absolute;
+  top: 2.5vh;
+  right: 5vw;
+  overflow: hidden;
+}
+
+#boton-menu .menuAbrir {
+  display: block;
+}
+
+#boton-menu .menuCerrar {
+  display: none;
+}
+
+#boton-menu.open .menuAbrir {
+  display: none;
+}
+
+#boton-menu.open .menuCerrar {
+  display: block;
+}
+
+@media screen and (max-width: 800px) {
+  #boton-menu {
+    display: block;
+  }
+
+  .navbar-links {
+    width: 100%;
+    display: none;
+  }
+
+  .navbar-links .dropdown {
+    display: none;
+  }
+
+  .navbar-links.open {
+    display: block;
+  }
+
+  .navbar-links ul {
+    position: absolute;
+    flex-direction: column;
+    margin-left: 47vw;
+    margin-top: 11vh;
+  }
+
+  .navbar-links ul li {
+    background-color: rgb(0, 0, 0, 0.9);
+  }
+
+  .navbar .eslogan {
+    display: none;
+  }
+
+  .navbar .logo {
+    position: absolute;
+    margin-left: 17vw;
+  }
+
+  .tarjetas-presentacion,
+  .postal {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tarjetones {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .imagen-tarj-pres,
+  .imagen-tarjetones,
+  .imagen-postal {
+    width: 90vw;
+  }
+
+  .texto-tarj-pres,
+  .texto-tarjetones,
+  .texto-postal {
+    width: 90%;
+  }
+
+  .info-folletos {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .texto-folletos {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .imagen-folleto {
+    width: 90vw;
+    margin-top: 3vh;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-contacto,
+  .footer-redes {
+    margin-top: 5vh;
+  }
+
+  .footer-contacto h3,
+  .footer-redes h3 {
+    margin-bottom: 10vh;
+  }
+
+  .image-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image {
+    margin-top: 2vh;
+  }
+}
+
+.navbar-hidden {
+  transform: translateY(-110%);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+}
+
+.logo-imagen {
+  padding: 1.2vh;
+  margin-right: 2vh;
+  height: 100%;
+  width: auto;
+}
+
+.logo {
+  font-size: 7vh;
+  text-decoration: none;
+  color: yellow;
+}
+
+.eslogan {
+  font-size: 3vh;
+  font-family: "Raleway", sans-serif;
+  color: white;
+  opacity: 25%;
+  margin: 0 0 0.5vh 5vh;
+}
+
+.navbar-links ul {
+  list-style: none;
+  display: flex;
+  padding-right: 5vw;
+  height: 100%;
+}
+
+.navbar-links ul li {
+  position: relative;
+}
+
+.navbar-links ul li a {
+  text-decoration: none;
+  font-size: 1.5em;
+  display: block;
+  padding: 1vh;
+}
+
+.dropdown {
+  background-color: rgb(248, 248, 97);
+  list-style: none;
+  top: 100%;
+  left: 0;
+  width: 20vh;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.5s ease, transform 0.5s ease;
+  transform: translateY(-10px);
+  z-index: -1;
+}
+
+.dropdown li {
+  width: 100%;
+  text-align: center;
+}
+
+.navbar-links ul li:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0px);
+}
+
+.dropdown a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  background-color: rgb(255, 255, 142);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown a:hover {
+  background-color: white;
+}
+
+.navbar li .dropbtn,
+.navbar li .button {
+  background-color: transparent;
+  padding: 1vh;
+  font-size: 1.2em;
+  border: none;
+  height: 100%;
+  width: 25vh;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.navbar li .button a,
+.navbar li .dropbtn a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar li:hover .dropbtn,
+.navbar li:hover .button {
+  background-color: yellow;
+}
+
+.navbar li:hover .button a,
+.navbar li:hover .dropbtn a {
+  color: black;
+}
+
+.fotoLocal {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: block;
+  filter: grayscale(100%) brightness(30%);
+  z-index: -1;
+  object-fit: cover;
+}
+
+.stickers,
+.folletos,
+.donde-estamos {
+  background-color: yellow;
+  padding: 20px;
+  padding-top: 40px;
+  position: relative;
+}
+
+.tarjetas,
+.otros {
+  background-color: black;
+  padding: 20px;
+  padding-top: 40px;
+  position: relative;
+}
+
+.stickers h1,
+.folletos h1,
+.donde-estamos h1 {
+  background-color: black;
+  color: yellow;
+  padding: 5px 20px 0 20px;
+  width: fit-content;
+  font-size: 4rem;
+}
+
+.tarjetas h1,
+.otros h1 {
+  background-color: yellow;
+  color: black;
+  padding: 5px 20px 0 20px;
+  width: fit-content;
+  font-size: 4rem;
+}
+
+.stickers p,
+.folletos p {
+  color: black;
+  font-size: 2rem;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  font-family: "RaleWay", sans-serif;
+  line-height: 1.5;
+}
+
+.tarjetas p,
+.otros p {
+  color: yellow;
+  font-size: 2rem;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  font-family: "RaleWay", sans-serif;
+  line-height: 1.5;
+}
+
+.separador-stickers {
+  background-color: yellow;
+  height: 7vh;
+  width: 100%;
+}
+
+.image-container {
+  position: relative;
+  display: flex;
+  width: 100vw;
+}
+
+.image {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.image-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.text {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  color: yellow;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  text-align: center;
+}
+
+.text2 {
+  font-family: "Raleway", sans-serif;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.6rem;
+  color: white;
+  opacity: 0;
+  transition: filter 0.3s ease-in-out;
+  text-align: center;
+}
+
+.image:hover .text,
+.image:hover .text2 {
+  opacity: 1;
+}
+
+.image:hover .image-img {
+  transform: scale(1.5);
+  filter: grayscale(100%) brightness(10%);
+}
+
+.tarjetas-presentacion,
+.tarjetones,
+.postal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5vh;
+  background-image: url(img/trama-graficar.png);
+}
+
+.texto-tarj-pres,
+.texto-tarjetones,
+.texto-postal {
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  text-align: center;
+  width: 100vw;
+}
+
+.texto-tarj-pres h1,
+.texto-tarjetones h1,
+.texto-postal h1 {
+  color: white;
+  font-size: 3rem;
+  padding: 4vh 1vw 1vh 1vw;
+  margin: 100px;
+  position: relative;
+}
+
+/* Esquina superior derecha (L amarilla) */
+.texto-tarj-pres h1::before,
+.texto-tarjetones h1::before,
+.texto-postal h1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px; /* Ancho de la parte horizontal de la L */
+  height: 20px; /* Alto de la parte vertical de la L */
+  border-top: 3px solid yellow;
+  border-right: 3px solid yellow;
+}
+
+/* Esquina inferior izquierda (L amarilla) */
+.texto-tarj-pres h1::after,
+.texto-tarjetones h1::after,
+.texto-postal h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20px; /* Ancho de la parte horizontal de la L */
+  height: 20px; /* Alto de la parte vertical de la L */
+  border-bottom: 3px solid yellow;
+  border-left: 3px solid yellow;
+}
+
+.texto-tarj-pres h1 p,
+.texto-tarjetones h1 p,
+.texto-postal h1 p {
+  padding: 4vw 0 3vw 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.imagen-tarj-pres,
+.imagen-postal {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(100px); /* Desplazadas a la derecha */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.imagen-tarjetones {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(-100px); /* Desplazadas a la derecha */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.imagen-tarj-pres img,
+.imagen-tarjetones img,
+.imagen-postal img {
+  max-width: 75vh;
+  height: auto;
+  margin: 5vh 0 10vh 0;
+  overflow: hidden;
+}
+
+.info-folletos {
+  display: flex;
+  width: 100%;
+}
+
+.imagen-folleto img {
+  width: 100%;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.texto-folletos {
+  flex: 1;
+  display: flex;
+}
+
+.columna {
+  position: relative;
+  justify-items: center;
+}
+
+.columna h1 {
+  position: relative;
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  margin-top: 5vh;
+  display: inline-block;
+}
+
+.columna p {
+  margin-top: 4vh;
+  padding: 5vh;
+  font-size: 2rem;
+  line-height: 1.5;
+  color: white;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+}
+
+.columna2 {
+  position: relative;
+  background-color: white;
+  justify-items: center;
+}
+
+.columna2 h1 {
+  position: relative;
+  font-size: 3rem;
+  color: black;
+  text-align: center;
+  margin-top: 5vh;
+  display: inline-block;
+}
+
+.columna2 p {
+  margin-top: 4vh;
+  padding: 5vh;
+  font-size: 2rem;
+  line-height: 1.5;
+  color: black;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+}
+
+.columna h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 5px;
+  background-color: yellow; /* Color del subrayado */
+  transition: width 0.3s ease; /* Animación suave de expansión */
+}
+
+.columna:hover h1::after {
+  width: 100%; /* El subrayado crece al 100% cuando hover sobre .columna2 */
+}
+
+.columna2 h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 5px;
+  background-color: black; /* Color del subrayado */
+  transition: width 0.3s ease; /* Animación suave de expansión */
+}
+
+.columna2:hover h1::after {
+  width: 100%; /* El subrayado crece al 100% cuando hover sobre .columna2 */
+}
+
+.carousel-container {
+  position: relative;
+  width: 70%;
+  max-height: 70vh;
+  margin: auto;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  overflow: hidden;
+}
+.carousel {
+  display: flex;
+  transition: transform 1.5s ease-in-out;
+}
+.carousel-item {
+  min-width: 100%;
+}
+.carousel img {
+  width: 100%;
+}
+#prev,
+#next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 251, 0, 0.5);
+  color: black;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+#prev {
+  left: 10px;
+}
+#next {
+  right: 10px;
+}
+
+.mapa {
+  background-color: yellow;
+}
+
+.mapa iframe {
+  display: flex;
+  width: 90%;
+  height: 75vh;
+  margin: auto;
+  padding: 5vh 0 5vh 0;
+}
+
+.footer {
+  background-color: #414141;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 80vw;
+  margin: auto;
+  margin-top: 3vh;
+}
+
+.footer-logo h2 {
+  font-size: 3rem;
+  color: yellow;
+}
+
+.footer-logo p {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2rem;
+}
+
+.footer-contacto h3,
+.footer-redes h3 {
+  font-size: 2rem;
+  margin-bottom: 3vh;
+}
+
+.footer-redes a,
+.footer-contacto p {
+  display: block;
+  margin-top: 1.5vh;
+  color: white;
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+}
+
+.footer-bottom {
+  margin-top: 7vh;
+  font-size: 1rem;
+  opacity: 0.7;
+}
