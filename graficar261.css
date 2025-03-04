@@ -49,7 +49,7 @@ body,
 
 #boton-menu svg {
   height: 5vh;
-  width: 5vw;
+  width: auto;
   color: white;
   position: absolute;
   top: 2.5vh;
@@ -73,13 +73,12 @@ body,
   display: block;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1245px) {
   #boton-menu {
     display: block;
   }
 
   .navbar-links {
-    width: 100%;
     display: none;
   }
 
@@ -88,14 +87,16 @@ body,
   }
 
   .navbar-links.open {
-    display: block;
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
   }
 
   .navbar-links ul {
-    position: fixed;
-    flex-direction: column;
-    margin-left: 47vw;
+    position: absolute;
+    width: auto;
     margin-top: 11vh;
+    flex-direction: column;
   }
 
   .navbar-links ul li {
