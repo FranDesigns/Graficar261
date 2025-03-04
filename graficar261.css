@@ -25,6 +25,8 @@ body,
   font-family: "Bebas Neue", sans-serif;
 }
 
+/*------------------NAVBAR Y MEDIA QUERY------------------*/
+
 .navbar {
   display: flex;
   position: fixed;
@@ -113,6 +115,11 @@ body,
     display: none;
   }
 
+  .logo-imagen {
+    margin-left: 3vw;
+    margin-right: 0;
+  }
+
   .tarjetas-presentacion,
   .postal {
     flex-direction: column;
@@ -124,16 +131,18 @@ body,
     align-items: center;
   }
 
+  .texto-tarj-pres h1,
+  .texto-tarjetones h1,
+  .texto-postal h1 {
+    margin: auto;
+    width: 90vw;
+  }
+
   .imagen-tarj-pres,
   .imagen-tarjetones,
   .imagen-postal {
     width: 90vw;
-  }
-
-  .texto-tarj-pres,
-  .texto-tarjetones,
-  .texto-postal {
-    width: 90%;
+    transform: translateX(0px) !important;
   }
 
   .info-folletos {
@@ -176,6 +185,10 @@ body,
   .image {
     margin-top: 2vh;
   }
+
+  .carousel-container {
+    width: 90% !important;
+  }
 }
 
 .navbar-hidden {
@@ -188,14 +201,14 @@ body,
 }
 
 .logo-imagen {
-  padding: 1.2vh;
+  padding: 0.5vh 0 0 1vw;
   margin-right: 2vh;
-  height: 100%;
+  height: 10vh;
   width: auto;
 }
 
 .logo {
-  font-size: 7vh;
+  font-size: 3vw;
   text-decoration: none;
   color: yellow;
 }
@@ -221,7 +234,7 @@ body,
 
 .navbar-links ul li a {
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 3vh;
   display: block;
   padding: 1vh;
 }
@@ -299,6 +312,8 @@ body,
   z-index: -1;
   object-fit: cover;
 }
+
+/*------------------STICKERS------------------*/
 
 .stickers,
 .folletos,
@@ -416,6 +431,8 @@ body,
   filter: grayscale(100%) brightness(10%);
 }
 
+/*------------------TARJETAS------------------*/
+
 .tarjetas-presentacion,
 .tarjetones,
 .postal {
@@ -440,10 +457,10 @@ body,
 .texto-tarj-pres h1,
 .texto-tarjetones h1,
 .texto-postal h1 {
+  text-align: center;
   color: white;
   font-size: 3rem;
   padding: 4vh 1vw 1vh 1vw;
-  margin: 100px;
   position: relative;
 }
 
@@ -478,7 +495,8 @@ body,
 .texto-tarj-pres h1 p,
 .texto-tarjetones h1 p,
 .texto-postal h1 p {
-  padding: 4vw 0 3vw 0;
+  text-align: center;
+  padding: 4vh 0 3vh 0;
   font-family: "Raleway", sans-serif;
   font-size: 2rem;
   width: 80%;
@@ -494,6 +512,7 @@ body,
   opacity: 0;
   transform: translateX(100px); /* Desplazadas a la derecha */
   transition: opacity 1s ease-out, transform 1s ease-out;
+  overflow: hidden;
 }
 .imagen-tarjetones {
   flex: 1;
@@ -503,6 +522,7 @@ body,
   opacity: 0;
   transform: translateX(-100px); /* Desplazadas a la derecha */
   transition: opacity 1s ease-out, transform 1s ease-out;
+  overflow: hidden;
 }
 
 .visible {
@@ -518,6 +538,8 @@ body,
   margin: 5vh 0 10vh 0;
   overflow: hidden;
 }
+
+/*------------------FOLLETOS------------------*/
 
 .info-folletos {
   display: flex;
@@ -614,13 +636,14 @@ body,
   width: 100%; /* El subrayado crece al 100% cuando hover sobre .columna2 */
 }
 
+/*------------------CAROUSEL------------------*/
+
 .carousel-container {
   position: relative;
-  width: 70%;
-  max-height: 70vh;
+  width: 50%;
+  height: auto;
   margin: auto;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
   overflow: hidden;
 }
 .carousel {
@@ -651,6 +674,8 @@ body,
   right: 10px;
 }
 
+/*------------------MAPA------------------*/
+
 .mapa {
   background-color: yellow;
 }
@@ -662,6 +687,8 @@ body,
   margin: auto;
   padding: 5vh 0 5vh 0;
 }
+
+/*------------------FOOTER------------------*/
 
 .footer {
   background-color: #414141;
