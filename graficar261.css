@@ -303,6 +303,61 @@ body,
   color: black;
 }
 
+/*------------------FONDO E INFO PRINCIPAL------------------*/
+
+.info-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 70vw;
+  height: 50vh;
+  margin-top: 4vh;
+  background-color: rgb(255, 255, 255, 0.3);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.info-principal h1 {
+  text-align: center;
+  font-size: 5vh;
+}
+
+.info-principal p {
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  font-size: 3vh;
+  margin-top: 2vh;
+}
+
+.seguinos-hablanos {
+  display: flex;
+  margin-top: 3vh;
+  gap: 50vh;
+}
+
+.seguinos-hablanos h1 {
+  text-align: center;
+  font-size: 5vh;
+  margin-top: 5vh;
+}
+
+.redes {
+  display: flex;
+  margin-top: 3vh;
+  gap: 70vh;
+}
+
+.whatsapp {
+  color: #25d366;
+}
+
+.instagram {
+  color: #ff226c;
+}
+
 .fotoLocal {
   position: relative;
   width: 100%;
