@@ -189,6 +189,14 @@ body,
   .carousel-container {
     width: 90% !important;
   }
+
+  .text {
+    font-size: 5vh !important;
+  }
+
+  .text2 {
+    font-size: 3vh !important;
+  }
 }
 
 .navbar-hidden {
@@ -456,7 +464,7 @@ body,
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2.5rem;
+  font-size: 2.5vw;
   color: yellow;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -469,7 +477,8 @@ body,
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.6rem;
+  margin-top: 1vw;
+  font-size: 1.3vw;
   color: white;
   opacity: 0;
   transition: filter 0.3s ease-in-out;
